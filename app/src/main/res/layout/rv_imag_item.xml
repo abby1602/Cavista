@@ -20,6 +20,7 @@
 
    <androidx.constraintlayout.widget.ConstraintLayout
        android:layout_margin="16dip"
+       android:background="@color/grey"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content">
 
@@ -30,6 +31,7 @@
           imageUrl="@{model.images[0].link}"
           android:adjustViewBounds="true"
           android:scaleType="centerCrop"
+          android:transitionName="imageMain"
           android:onClick="@{()->viewModel.openDetail(model, position)}"
           app:layout_constraintLeft_toLeftOf="parent"
           app:layout_constraintTop_toTopOf="parent"/>

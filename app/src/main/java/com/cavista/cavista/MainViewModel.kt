@@ -77,8 +77,17 @@ class MainViewModel : ViewModel() {
  * */
     fun openDetail(model : Data, position : Int){
 
+
+    try{
+
         imageLink = model.images[0].link
         imageTitle = model.title
         detailClick.value = true
+    }catch (exc : Exception){
+
+        showToastValue = "Data not available!!"
+        showToast.value = true
+    }
+
     }
 }
