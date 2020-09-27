@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout   xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+   <data>
+
+      <variable
+          name="viewModel"
+          type="com.cavista.cavista.MainViewModel" />
+
+      <variable
+          name="model"
+          type="com.cavista.cavista.data.Data" />
+
+      <variable
+          name="position"
+          type="Integer" />
+
+   </data>
+
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_margin="16dip"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+
+
+      <androidx.appcompat.widget.AppCompatImageView
+          android:layout_width="300dip"
+          android:layout_height="250dip"
+          imageUrl="@{model.images[0].link}"
+          android:adjustViewBounds="true"
+          android:scaleType="centerCrop"
+          android:onClick="@{()->viewModel.openDetail(model, position)}"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintTop_toTopOf="parent"/>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
